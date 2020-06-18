@@ -8,7 +8,8 @@ while True:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.connect((ip, port))
         print(f'connecting to {ip} port {port}')
-        message = b'Cliente 2'
+        print('Please write your message: ')
+        message = bytes(input(), encoding='utf-8')
         print(f'sending {message}')
         sock.sendall(message)
         data = sock.recv(1024)
